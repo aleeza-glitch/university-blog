@@ -1,0 +1,285 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>University of Layyah | Student Blog</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+
+        <div class="logo">
+            <div class="logo-icon">UL</div>
+
+            <div>
+                <h2>University of Layyah</h2>
+                <p>Student Blog & Campus Stories</p>
+            </div>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle"
+            aria-label="Toggle navigation" aria-expanded="false">
+            ☰
+        </button>
+
+        <!-- Navigation -->
+        <nav class="navbar" id="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#blogs">Blogs</a>
+            <a href="#categories">Categories</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <span class="hero-label">WELCOME TO OUR CAMPUS BLOG</span>
+
+            <h1>
+                Discover Campus Life at
+                <span>University of Layyah</span>
+            </h1>
+
+            <p>
+                Explore student stories, university events, educational
+                insights, and memorable moments from campus life.
+            </p>
+
+            <a href="#blogs" class="btn">Explore Blogs →</a>
+
+        </div>
+
+    </section>
+
+
+    <!-- About Section -->
+    <section class="about section" id="about">
+
+        <div class="section-heading">
+            <span class="small-heading">ABOUT OUR BLOG</span>
+            <h2>Stories That Connect Us</h2>
+        </div>
+
+        <p class="about-text">
+            Welcome to our University of Layyah student blog. This platform
+            shares campus experiences, educational information, student
+            achievements, and university-related activities.
+
+            Our goal is to create a place where students can explore ideas,
+            learn from one another, and stay connected with campus life.
+        </p>
+
+    </section>
+
+
+    <!-- Categories Section -->
+    <section class="categories section" id="categories">
+
+        <div class="section-heading">
+            <span class="small-heading">EXPLORE TOPICS</span>
+            <h2>Browse Categories</h2>
+        </div>
+
+        <div class="category-buttons">
+
+            <button class="category-btn active"
+                data-category="All">All Posts</button>
+
+            <button class="category-btn"
+                data-category="Campus Life">Campus Life</button>
+
+            <button class="category-btn"
+                data-category="Education">Education</button>
+
+            <button class="category-btn"
+                data-category="Events">Events</button>
+
+            <button class="category-btn"
+                data-category="Technology">Technology</button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Blog Section -->
+    <section class="blogs section" id="blogs">
+
+        <div class="section-heading">
+            <span class="small-heading">LATEST STORIES</span>
+            <h2>Explore Our Blogs</h2>
+
+            <p>
+                Read stories, explore ideas, and discover campus life.
+            </p>
+        </div>
+
+
+        <!-- Search -->
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search blog posts..."
+                aria-label="Search blog posts">
+
+            <button id="searchButton">Search</button>
+
+        </div>
+
+
+        <!-- Blog Cards: JavaScript will insert posts here -->
+        <div class="blog-grid" id="blogGrid"></div>
+
+        <p class="no-results" id="noResults" hidden>
+            No blog posts found. Try another search.
+        </p>
+
+    </section>
+
+
+    <!-- Newsletter Section -->
+    <section class="newsletter section">
+
+        <div class="newsletter-content">
+
+            <h2>Stay Connected With Campus Life</h2>
+
+            <p>
+                Enter your email to try our newsletter subscription demo.
+            </p>
+
+            <form id="newsletterForm">
+
+                <input
+                    type="email"
+                    id="emailInput"
+                    placeholder="Enter your email address"
+                    aria-label="Email address"
+                    required>
+
+                <button type="submit">Subscribe</button>
+
+            </form>
+
+            <p id="newsletterMessage" class="form-message"
+                aria-live="polite"></p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact Section -->
+    <section class="contact section" id="contact">
+
+        <div class="section-heading">
+            <span class="small-heading">GET IN TOUCH</span>
+            <h2>Contact Our Blog Team</h2>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+
+            <input
+                type="text"
+                id="contactName"
+                placeholder="Your Name"
+                required>
+
+            <input
+                type="email"
+                id="contactEmail"
+                placeholder="Your Email"
+                required>
+
+            <textarea
+                id="contactMessage"
+                placeholder="Write your message..."
+                rows="5"
+                required></textarea>
+
+            <button type="submit" class="btn">
+                Send Message
+            </button>
+
+            <p id="contactFeedback" class="form-message"
+                aria-live="polite"></p>
+
+        </form>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="footer-logo">
+            <div class="logo-icon">UL</div>
+            <h3>University of Layyah Blog</h3>
+        </div>
+
+        <p>
+            A student project celebrating learning, campus life,
+            and student experiences.
+        </p>
+
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#blogs">Blogs</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <p class="copyright">
+            &copy; <span id="currentYear"></span>
+            University of Layyah Blog. Student Project.
+        </p>
+
+    </footer>
+
+
+    <!-- Blog Post Modal -->
+    <div class="modal" id="blogModal"
+        role="dialog" aria-modal="true"
+        aria-labelledby="modalTitle" hidden>
+
+        <div class="modal-content">
+
+            <button class="modal-close" id="modalClose"
+                aria-label="Close blog post">&times;</button>
+
+            <span class="small-heading" id="modalCategory"></span>
+
+            <h2 id="modalTitle"></h2>
+
+            <p class="modal-date" id="modalDate"></p>
+
+            <div id="modalBody"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+
